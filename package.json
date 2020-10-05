@@ -10,6 +10,18 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "contentful": "^7.14.6"
+    "contentful": "^7.14.6",
+    "dotenv": "^8.2.0"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^11.0.0",
+    "@commitlint/config-conventional": "^11.0.0",
+    "husky": "^4.3.0",
+    "lint-staged": "^10.4.0"
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
   }
 }
