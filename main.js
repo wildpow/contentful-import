@@ -1,13 +1,19 @@
 require('dotenv').config();
 var contentful = require('contentful');
-console.log(process.env);
+
 var client = contentful.createClient({
   space: process.env.SPACEID,
   accessToken: process.env.ACCESSTOKEN,
 });
 
-// Test
+const csv = require('csvtojson');
 
+// Test
+csv()
+  .fromFile('./test.csv')
+  .then(jsonObject => {
+    console.log(jsonObject);
+  });
 client
   .getEntries()
   .then(entries => {
